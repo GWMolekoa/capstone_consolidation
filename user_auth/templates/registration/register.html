@@ -2,23 +2,27 @@
 {% block title %}
     Register
 {% endblock %}
+
 <!DOCTYPE html>
 <html>
     <head>
         <title>Register to Listen With Pvle_'TheEngineer'</title>
     </head>
     <body>
-
         {% block content %}
         
+        <!-- Page header -->
         <h2>Register to Listen With Pvle_'TheEngineer'</h2>
+        
+        <!-- Registration form -->
         <form method="post">
             {% csrf_token %}
+            <!-- Render the form fields as paragraphs -->
             {{ form.as_p }}
+            <!-- Submit button -->
             <button class="btn btn-success" type="submit">Register</button>
         </form>
         
         {% endblock %}
-
     </body>
 </html>
