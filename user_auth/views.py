@@ -22,8 +22,21 @@ class UserRegisterView(generic.CreateView):
     # reverse_lazy is used to lazily reverse the 'login' URL name into a URL string.
     # This means that the actual URL is not computed until it is needed.
 
-
 def user_login(request):
+    """
+    Handle user login requests.
+    
+    Handles both GET and POST requests. On GET requests, renders the login form.
+    On POST requests, processes the form data to authenticate and log in the user.
+
+    Args:
+        request (HttpRequest): The request object containing the form data.
+    
+    Returns:
+        HttpResponse: Renders the login form on GET requests or redirects to the home page 
+                      on successful login. Renders the login form with errors on invalid 
+                      login attempts.
+    """
     if request.method == 'POST':
         form = CustomAuthenticationForm(request, data=request.POST)
         if form.is_valid():
