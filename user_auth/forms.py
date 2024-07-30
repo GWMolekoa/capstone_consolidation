@@ -1,3 +1,10 @@
+"""
+Forms module for user authentication and registration.
+
+This module contains form classes for user registration and authentication,
+customized to include additional fields and Bootstrap styling.
+"""
+
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
@@ -51,7 +58,18 @@ class RegForm(UserCreationForm):
 
 
 class CustomAuthenticationForm(AuthenticationForm):
+    """
+    A form for authenticating users. Inherits from AuthenticationForm.
+    
+    Applies Bootstrap 'form-control' class to username and password fields for consistent styling.
+    """
+    
     def __init__(self, *args, **kwargs):
+        """
+        Initialize the form by calling the parent constructor and then apply the 
+        'form-control' class to the username and password fields to ensure consistent 
+        Bootstrap styling.
+        """
         super(CustomAuthenticationForm, self).__init__(*args, **kwargs)
         self.fields['username'].widget.attrs.update({'class': 'form-control'})
         self.fields['password'].widget.attrs.update({'class': 'form-control'})
