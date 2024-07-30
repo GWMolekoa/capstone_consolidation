@@ -5,7 +5,7 @@ from django.db import models
 class Myband(models.Model):
     """
     Model representing a musical band.
-    
+
     Attributes:
         name (str): The name of the band.
         genre (str): The genre of music the band plays.
@@ -22,7 +22,7 @@ class Myband(models.Model):
     def __str__(self):
         """
         String representation of the Myband object.
-        
+
         Returns:
             str: The name of the band followed by its genre.
         """
