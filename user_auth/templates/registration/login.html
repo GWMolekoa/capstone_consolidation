@@ -2,20 +2,22 @@
 {% block title %}
     Login
 {% endblock %}
+
 <!DOCTYPE html>
 <html>
     <body>
-
         {% block content %}
         
-
-        
+        <!-- Page header -->
         <h2>Login To Listen With <span class="text-success">Pvle_'TheEngineer'</span></h2>
 
+        <!-- Load custom form tags if defined -->
         {% load form_tags %}
 
+        <!-- Login form -->
         <form method="post">
             {% csrf_token %}
+            <!-- Username field -->
             <div class="mb-3">
                 <label for="{{ form.username.id_for_label }}" class="form-label">Username</label>
                 {{ form.username|add_class:"form-control" }}
@@ -25,6 +27,7 @@
                     </div>
                 {% endif %}
             </div>
+            <!-- Password field -->
             <div class="mb-3">
                 <label for="{{ form.password.id_for_label }}" class="form-label">Password</label>
                 {{ form.password|add_class:"form-control" }}
@@ -34,10 +37,10 @@
                     </div>
                 {% endif %}
             </div>
+            <!-- Submit button -->
             <button class="btn btn-success" type="submit">Login</button>
         </form>   
         
         {% endblock %}
-
     </body>
 </html>
