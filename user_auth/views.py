@@ -12,9 +12,9 @@ class UserRegisterView(generic.CreateView):
     User registration view that uses Django's generic CreateView.
     
     Attributes:
-        form_class (RegForm): Specifies the form to use for user registration.
-        template_name (str): The path to the template that will render the registration form.
-        success_url (str): The URL to redirect to upon successful registration.
+        form_class (RegForm): Specifies the form to use for user registration. :noindex:
+        template_name (str): The path to the template that will render the registration form. :noindex:
+        success_url (str): The URL to redirect to upon successful registration. :noindex:
     """
     form_class = RegForm
     template_name = 'registration/register.html'
