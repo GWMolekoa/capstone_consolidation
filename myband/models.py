@@ -7,11 +7,11 @@ class Myband(models.Model):
     Model representing a musical band.
 
     Attributes:
-        name (str): The name of the band.
-        genre (str): The genre of music the band plays.
-        year_formed (int): The year the band was formed.
-        popular_songs (str): List of popular songs by the band.
-        body (str): Description or information about the band.
+        name (str): The name of the band. :noindex:
+        genre (str): The genre of music the band plays. :noindex:
+        year_formed (int): The year the band was formed. :noindex:
+        popular_songs (str): List of popular songs by the band. :noindex:
+        body (str): Description or information about the band. :noindex:
     """
     name = models.CharField(max_length=150)
     genre = models.CharField(max_length=100)
