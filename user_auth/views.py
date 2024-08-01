@@ -5,8 +5,6 @@ from user_auth.forms import RegForm
 from .forms import CustomAuthenticationForm
 from django.contrib.auth import login, authenticate
 
-# Create your views here.
-
 class UserRegisterView(generic.CreateView):
     """
     User registration view that uses Django's generic CreateView.
