@@ -36,5 +36,3 @@
 ### Documentation
 
 The documentation is generated using Sphinx and can be found in the 'docs/_build/html/' directory. The documentation can be viewed by opening 'index.html'.
-
-
