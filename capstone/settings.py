@@ -1,5 +1,5 @@
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -8,10 +8,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-!rj@kh@)+*bif9fq!v16*44b8spzxf3ww$abvu*jdqxu=u2*$q'
+# SECRET_KEY = 'django-insecure-!rj@kh@)+*bif9fq!v16*44b8spzxf3ww$abvu*jdqxu=u2*$q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
+
+# Env Variables to host on Heroku
+SECRET_KEY = os.getenv('SECRET_KEY', 'MXOx0MXcjenqyPV8nqE8QrzfVl3ggtnKmdfQY2a3E-lOrIdYfCdXrlUYUMDbU3S0DrA')  # Replace with your Heroku environment variable
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
+
 
 ALLOWED_HOSTS = []
 
@@ -106,7 +111,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = '/static/'
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # or any directory of your choice
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -115,3 +120,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'login'
+
